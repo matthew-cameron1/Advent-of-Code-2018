@@ -1,23 +1,21 @@
 challengeInput = open("day1_input.txt", "r")
 
+formattedInput = []
+
+for line in challengeInput:
+	formattedInput.append(int(line))
+
 def partOne():
 	sum = 0
 
-	for line in challengeInput:
-		change = int(line)
-		sum+=change
+	for line in formattedInput:
+		sum+=line
 
 	print("Your ending frequency is:", str(sum))
 
 def partTwo():
 	seen = []
 	sum = 0
-
-	formattedInput = []
-
-	for line in challengeInput:
-		num = int(line)
-		formattedInput.append(num)
 
 	iter = 0
 	for i in range(len(formattedInput)):
@@ -37,6 +35,7 @@ def partTwo():
 	print("Found", sum)
 
 def main():
+	partOne()
 	partTwo()
 
 main()
